@@ -34,7 +34,7 @@ class CerStrategy
      */
     public function __construct($file)
     {
-        $this->file = $file;
+        $this->file = file_get_contents($file);
     }
 
     /**
@@ -42,7 +42,7 @@ class CerStrategy
      *
      * @return string
      */
-    public function convertToPem()
+    public function convertToPem() : string
     {
         $prefix = "-----BEGIN CERTIFICATE-----\n";
         $suffix = "-----END CERTIFICATE-----\n";

@@ -20,7 +20,7 @@ class CerStartegyTest extends TestCase
     {
         $cerFileName = './tests/files/CSD01_AAA010101AAA.cer';
 
-        $strategy = new CerStrategy(file_get_contents($cerFileName));
+        $strategy = new CerStrategy($cerFileName);
 
         $this->assertEquals(
             $strategy->convertToPem(),

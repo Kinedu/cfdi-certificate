@@ -40,7 +40,7 @@ class KeyStrategy
     /**
      * @return string
      */
-    public function convertToPem()
+    public function convertToPem() : string
     {
         $pem = shell_exec("openssl pkcs8 -inform DER -in {$this->file} -passin pass:{$this->password}");
 
