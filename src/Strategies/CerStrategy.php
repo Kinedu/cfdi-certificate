@@ -16,7 +16,7 @@ class CerStrategy
     /**
      * File to decode.
      *
-     * @var
+     * @var string
      */
     protected $file;
 
