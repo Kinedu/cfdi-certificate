@@ -27,6 +27,15 @@ $key = new Certificate($keyFile, $password);
 $key->decode();
 ```
 
+```php
+use Kinedu\CfdiCertificate\Certificate;
+
+$cerFile = 'CSD01_AAA010101AAA.cer';
+
+$cer = new Certificate($cerFile);
+$cer->save('./CSD/CSD01_AAA010101AAA.cer.pem');
+```
+
 ## License
 
 CFDI Certificate is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

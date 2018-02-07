@@ -72,4 +72,14 @@ class Certificate
 
         return $pem;
     }
+
+    /**
+     * @param string $filename
+     *
+     * @return
+     */
+    public function save(string $filename)
+    {
+        return file_put_contents($filename, $this->decode());
+    }
 }
