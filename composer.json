@@ -1,6 +1,6 @@
 {
     "name": "kinedu/cfdi-certificate",
-    "description": "",
+    "description": "Librería para decodificar los Certificados de Sello Digital (CSD) del Servicio de Administración Tributaria (SAT)",
     "homepage": "https://github.com/Kinedu/cfdi-certificate",
     "type": "library",
     "license": "MIT",
