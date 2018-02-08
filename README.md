@@ -6,13 +6,16 @@
 [![Total Downloads](https://poser.pugx.org/kinedu/cfdi-certificate/downloads?format=flat-square)](https://packagist.org/packages/kinedu/cfdi-certificate)
 [![License](https://img.shields.io/github/license/kinedu/cfdi-certificate.svg?style=flat-square)](https://packagist.org/packages/kinedu/cfdi-certificate)
 
-## Installation
+## Instalación
+
+Instalar el paquete mediante [Composer](https://getcomposer.org/).
 
 ```shell
 composer require kinedu/cfdi-certificate
 ```
 
-## Use
+## Uso
+
 ```php
 use Kinedu\CfdiCertificate\Certificate;
 
@@ -36,6 +39,6 @@ $cer = new Certificate($cerFile);
 $cer->save('./CSD/CSD01_AAA010101AAA.cer.pem');
 ```
 
-## License
+## Licencia
 
-CFDI Certificate is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+CFDI Certificate esta bajo la Licencia MIT, si quieres saber más al respecto puedes ver el archivo de [Licencia](LICENSE) que se encuentra en este mismo repositorio.
