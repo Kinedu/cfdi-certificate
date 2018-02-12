@@ -30,7 +30,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Kinedu\\CfdiCertificate\\\\Tests\\": "tests"
+            "Kinedu\\CfdiCertificate\\Tests\\": "tests"
         }
     },
     "prefer-stable": true
