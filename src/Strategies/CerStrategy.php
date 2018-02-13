@@ -62,6 +62,8 @@ class CerStrategy
         $data = $this->parseCertificate();
         $data = str_split($data['serialNumberHex'], 2);
 
+        $serialNumber = null;
+
         for ($i = 0; $i < sizeof($data); $i++) {
             $serialNumber .= substr($data[$i], 1);
         }
