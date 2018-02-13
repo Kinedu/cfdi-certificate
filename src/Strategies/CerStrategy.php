@@ -72,10 +72,28 @@ class CerStrategy
     }
 
     /**
+     * @return string
+     */
+    public function getExpirationDate()
+    {
+        $data = $this->parseCertificate();
+
+        return $this->dateFormat($data['validTo_time_t']);
+    }
+
+    /**
      * @return array
      */
     protected function parseCertificate()
     {
         return openssl_x509_parse($this->convertToPem());
+    }
+
+    /**
+     * @param string $date
+     */
+    protected function dateFormat(string $date)
+    {
+        return date('Y-m-d H:i:s', $date);
     }
 }

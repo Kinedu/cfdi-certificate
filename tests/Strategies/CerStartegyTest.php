@@ -37,4 +37,14 @@ class CerStartegyTest extends TestCase
             '30001000000300023708'
         );
     }
+
+    public function testGetExpirationDate()
+    {
+        $strategy = new CerStrategy($this->cerFileName);
+
+        $this->assertEquals(
+            $strategy->getExpirationDate(),
+            '2021-05-18 03:54:56'
+        );
+    }
 }
