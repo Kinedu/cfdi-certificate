@@ -92,7 +92,7 @@ class Certificate
     {
         $strategy = $this->getStrategy();
 
-        if(method_exists($strategy, $name)) {
+        if (method_exists($strategy, $name)) {
             return $strategy->{$name}($arguments);
         } else {
             throw new Exception("This method doesn't exist");
