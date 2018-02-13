@@ -14,6 +14,7 @@ namespace Kinedu\CfdiCertificate;
 use Kinedu\CfdiCertificate\Strategies\CerStrategy;
 use Kinedu\CfdiCertificate\Strategies\KeyStrategy;
 use Kinedu\CfdiCertificate\IO;
+use Exception;
 
 class Certificate
 {
@@ -81,5 +82,20 @@ class Certificate
     public function save(string $filename)
     {
         return file_put_contents($filename, $this->decode());
+    }
+
+    /**
+     * @param string $name
+     * @param array $arguments
+     */
+    public function __call(string $name, array $arguments)
+    {
+        $strategy = $this->getStrategy();
+
+        if(method_exists($strategy, $name)) {
+            return $strategy->{$name}($arguments);
+        } else {
+            throw new Exception("This method doesn't exist");
+        }
     }
 }

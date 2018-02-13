@@ -53,4 +53,27 @@ class CerStrategy
 
         return $pem;
     }
+
+    /**
+     * @return string
+     */
+    public function getNoCertificado()
+    {
+        $data = $this->parseCertificate();
+        $data = str_split($data['serialNumberHex'], 2);
+
+        for ($i = 0; $i < sizeof($data); $i++) {
+            $serialNumber .= substr($data[$i], 1);
+        }
+
+        return $serialNumber;
+    }
+
+    /**
+     * @return array
+     */
+    protected function parseCertificate()
+    {
+        return openssl_x509_parse($this->convertToPem());
+    }
 }

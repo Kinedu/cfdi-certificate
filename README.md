@@ -39,6 +39,15 @@ $cer = new Certificate($cerFile);
 $cer->save('./CSD/CSD01_AAA010101AAA.cer.pem');
 ```
 
+```php
+use Kinedu\CfdiCertificate\Certificate;
+
+$cerFile = 'CSD01_AAA010101AAA.cer';
+
+$cer = new Certificate($cerFile);
+$cer->getNoCertificado();
+```
+
 ## Licencia
 
 CFDI Certificate esta bajo la Licencia MIT, si quieres saber más al respecto puedes ver el archivo de [Licencia](LICENSE) que se encuentra en este mismo repositorio.

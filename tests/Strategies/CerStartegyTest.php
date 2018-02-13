@@ -16,15 +16,25 @@ use Kinedu\CfdiCertificate\Strategies\CerStrategy;
 
 class CerStartegyTest extends TestCase
 {
+    protected $cerFileName = './tests/files/CSD01_AAA010101AAA.cer';
+
     public function testConvertCerToPem()
     {
-        $cerFileName = './tests/files/CSD01_AAA010101AAA.cer';
-
-        $strategy = new CerStrategy($cerFileName);
+        $strategy = new CerStrategy($this->cerFileName);
 
         $this->assertEquals(
             $strategy->convertToPem(),
-            file_get_contents("{$cerFileName}.pem")
+            file_get_contents("{$this->cerFileName}.pem")
+        );
+    }
+
+    public function testGetNoCertificado()
+    {
+        $strategy = new CerStrategy($this->cerFileName);
+
+        $this->assertEquals(
+            $strategy->getNoCertificado(),
+            '30001000000300023708'
         );
     }
 }
