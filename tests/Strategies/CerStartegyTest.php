@@ -47,4 +47,14 @@ class CerStartegyTest extends TestCase
             '2021-05-18 03:54:56'
         );
     }
+
+    public function testGetInitialDate()
+    {
+        $strategy = new CerStrategy($this->cerFileName);
+
+        $this->assertEquals(
+            $strategy->getInitialDate(),
+            '2017-05-18 03:54:56'
+        );
+    }
 }

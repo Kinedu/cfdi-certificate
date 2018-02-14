@@ -82,6 +82,16 @@ class CerStrategy
     }
 
     /**
+     * @return string
+     */
+    public function getInitialDate()
+    {
+        $data = $this->parseCertificate();
+
+        return $this->dateFormat($data['validFrom_time_t']);
+    }
+
+    /**
      * @return array
      */
     protected function parseCertificate()

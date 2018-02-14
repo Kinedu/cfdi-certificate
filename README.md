@@ -16,6 +16,13 @@ composer require kinedu/cfdi-certificate
 
 ## Uso
 
+- [Obtener Certificado Decodificado](#obtener-certificado-decodificado)
+- [Número de Certificado](#número-de-certificado)
+- [Fecha de Expiración](#fecha-de-expiración)
+- [Guardar Certificado Decodificado](#guardar-certificado-decodificado)
+
+### Obtener Certificado Decodificado
+
 ```php
 use Kinedu\CfdiCertificate\Certificate;
 
@@ -30,14 +37,7 @@ $key = new Certificate($keyFile, $password);
 $key->decode();
 ```
 
-```php
-use Kinedu\CfdiCertificate\Certificate;
-
-$cerFile = 'CSD01_AAA010101AAA.cer';
-
-$cer = new Certificate($cerFile);
-$cer->save('./CSD/CSD01_AAA010101AAA.cer.pem');
-```
+### Número de Certificado
 
 ```php
 use Kinedu\CfdiCertificate\Certificate;
@@ -46,6 +46,42 @@ $cerFile = 'CSD01_AAA010101AAA.cer';
 
 $cer = new Certificate($cerFile);
 $cer->getNoCertificado();
+```
+
+```php
+use Kinedu\CfdiCertificate\Certificate;
+
+$cerFile = 'CSD01_AAA010101AAA.cer';
+
+$cer = new Certificate($cerFile);
+$cer->getInitialDate();
+```
+
+### Fecha de Expiración
+
+```php
+use Kinedu\CfdiCertificate\Certificate;
+
+$cerFile = 'CSD01_AAA010101AAA.cer';
+
+$cer = new Certificate($cerFile);
+$cer->getExpirationDate();
+```
+
+### Guardar Certificado Decodificado
+
+```php
+use Kinedu\CfdiCertificate\Certificate;
+
+$cerFile  = 'CSD01_AAA010101AAA.cer';
+$keyFile  = 'CSD01_AAA010101AAA.key';
+$password = '12345678a';
+
+$cer = new Certificate($cerFile);
+$cer->save('./CSD/CSD01_AAA010101AAA.cer.pem');
+
+$key = new Certificate($keyFile, $password);
+$key->save('./CSD/CSD01_AAA010101AAA.key.pem');
 ```
 
 ## Licencia
