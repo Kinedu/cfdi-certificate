@@ -75,13 +75,18 @@ class Certificate
     }
 
     /**
+     * @param string $directory
      * @param string $filename
-     *
-     * @return
      */
-    public function save(string $filename)
+    public function save(string $directory, string $filename = null)
     {
-        return file_put_contents($filename, $this->decode());
+        $filename  = $filename ?? $this->file->getFileName();
+        $extension = $this->file->getFileExstensionName();
+
+        $directory = rtrim($directory, '/').'/';
+        $directory = "{$directory}{$filename}.{$extension}.pem";
+
+        return file_put_contents($directory, $this->decode());
     }
 
     /**

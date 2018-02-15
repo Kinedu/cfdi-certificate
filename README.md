@@ -85,10 +85,10 @@ $keyFile  = 'CSD01_AAA010101AAA.key';
 $password = '12345678a';
 
 $cer = new Certificate($cerFile);
-$cer->save('./CSD/CSD01_AAA010101AAA.cer.pem');
+$cer->save('./CSD');
 
 $key = new Certificate($keyFile, $password);
-$key->save('./CSD/CSD01_AAA010101AAA.key.pem');
+$key->save('./CSD', 'CSD01_AAA010101AAA');
 ```
 
 ## Licencia
