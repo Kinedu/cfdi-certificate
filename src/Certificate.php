@@ -19,11 +19,15 @@ use Exception;
 class Certificate
 {
     /**
+     * File to decode.
+     *
      * @var string
      */
     protected $file;
 
     /**
+     * Password to the decode the file.
+     *
      * @var string
      */
     protected $password;
@@ -77,6 +81,8 @@ class Certificate
     /**
      * @param string $directory
      * @param string $filename
+     *
+     * @return integer|bool
      */
     public function save(string $directory, string $filename = null)
     {

@@ -21,6 +21,8 @@ class KeyStrategy
     protected $file;
 
     /**
+     * Password to decode the file.
+     *
      * @var string
      */
     protected $password;
