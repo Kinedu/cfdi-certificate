@@ -18,10 +18,13 @@ composer require kinedu/cfdi-certificate
 
 - [Obtener Certificado Decodificado](#obtener-certificado-decodificado)
 - [Número de Certificado](#número-de-certificado)
+- [Fecha Inicio de Vigencia](#fecha-inicio-de-vigencia)
 - [Fecha de Expiración](#fecha-de-expiración)
 - [Guardar Certificado Decodificado](#guardar-certificado-decodificado)
 
 ### Obtener Certificado Decodificado
+
+Se pueden decodificar dos tipos de archivo creando una instancia de `Certificate`, estos pueden ser los archivos `.cer` y `.key` para obtener el resultado de dichos archivos solo es necesario mandar la ruta del archivo en la instancia y mandar a llamar el método `decode()` en el caso de los archivos `.key` es necesario mandar la contraseña como segundo parametro.
 
 ```php
 use Kinedu\CfdiCertificate\Certificate;
@@ -48,6 +51,8 @@ $cer = new Certificate($cerFile);
 $cer->getNoCertificado();
 ```
 
+### Fecha Inicio de Vigencia
+
 ```php
 use Kinedu\CfdiCertificate\Certificate;
 
@@ -69,6 +74,8 @@ $cer->getExpirationDate();
 ```
 
 ### Guardar Certificado Decodificado
+
+Para guardar el Certificado de Sello Digital (CSD) decodificado es necesario utilizar el método `save(string $filename)` con el nombre y la dirección donde se quiere guardar el archivo.
 
 ```php
 use Kinedu\CfdiCertificate\Certificate;
