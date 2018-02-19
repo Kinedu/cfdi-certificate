@@ -33,15 +33,22 @@ class Certificate
     protected $password;
 
     /**
+     * @var string
+     */
+    protected $strategy;
+
+    /**
      * Create a new certificate instance.
      *
      * @param string $file
      * @param string $password
+     * @param string $strategy
      */
-    public function __construct(string $file, string $password = null)
+    public function __construct(string $file, string $password = null, string $strategy = null)
     {
         $this->file = new IO($file);
         $this->password = $password;
+        $this->strategy = $strategy;
     }
 
     /**
@@ -49,7 +56,7 @@ class Certificate
      */
     protected function getStrategy()
     {
-        switch ($this->file->getFileExstensionName()) {
+        switch ($this->getFileExstensionName()) {
             case 'cer':
                 $strategy = new CerStrategy(
                     $this->file->getOrginalRoute()
@@ -87,7 +94,7 @@ class Certificate
     public function save(string $directory, string $filename = null)
     {
         $filename  = $filename ?? $this->file->getFileName();
-        $extension = $this->file->getFileExstensionName();
+        $extension = $this->getFileExstensionName();
 
         $directory = rtrim($directory, '/').'/';
         $directory = "{$directory}{$filename}.{$extension}.pem";
@@ -108,5 +115,13 @@ class Certificate
         } else {
             throw new Exception("This method doesn't exist");
         }
+    }
+
+    /**
+     * @return string
+     */
+    protected function getFileExstensionName()
+    {
+        return $this->strategy ?? $this->file->getFileExstensionName();
     }
 }
