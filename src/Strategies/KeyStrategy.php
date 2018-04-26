@@ -30,10 +30,10 @@ class KeyStrategy
     /**
      * Create a new key strategy instance.
      *
-     * @param $file
+     * @param string $file
      * @param string $password
      */
-    public function __construct($file, string $password)
+    public function __construct(string $file, string $password)
     {
         $this->file = $file;
         $this->password = $password;
@@ -42,7 +42,7 @@ class KeyStrategy
     /**
      * @return string
      */
-    public function convertToPem() : string
+    public function convertToPem(): string
     {
         $pem = shell_exec("openssl pkcs8 -inform DER -in {$this->file} -passin pass:{$this->password}");
 

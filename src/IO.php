@@ -31,7 +31,7 @@ class IO
     /**
      * @return string
      */
-    public function getFileName() : string
+    public function getFileName(): string
     {
         $name = pathinfo($this->file);
         $name = $name['filename'];
@@ -42,7 +42,7 @@ class IO
     /**
      * @return string
      */
-    public function getFileExstensionName() : string
+    public function getFileExstensionName(): string
     {
         $ext = strrchr($this->file, '.');
         $ext = substr($ext, 1);
@@ -53,7 +53,7 @@ class IO
     /**
      * @return string
      */
-    public function getOrginalRoute() : string
+    public function getOrginalRoute(): string
     {
         return $this->file;
     }

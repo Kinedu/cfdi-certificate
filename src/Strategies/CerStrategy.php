@@ -30,9 +30,9 @@ class CerStrategy
     /**
      * Create a new cer strategy instance.
      *
-     * @param $file
+     * @param string $file
      */
-    public function __construct($file)
+    public function __construct(string $file)
     {
         $this->file = file_get_contents($file);
     }
@@ -42,7 +42,7 @@ class CerStrategy
      *
      * @return string
      */
-    public function convertToPem() : string
+    public function convertToPem(): string
     {
         $prefix = "-----BEGIN CERTIFICATE-----\n";
         $suffix = "-----END CERTIFICATE-----\n";
