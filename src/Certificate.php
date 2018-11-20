@@ -13,10 +13,8 @@ namespace Kinedu\CfdiCertificate;
 
 use Exception;
 use Kinedu\CfdiCertificate\IO;
-use Kinedu\CfdiCertificate\Strategies\{
-    CerStrategy,
-    KeyStrategy
-};
+use Kinedu\CfdiCertificate\Strategies\CerStrategy;
+use Kinedu\CfdiCertificate\Strategies\KeyStrategy;
 
 class Certificate
 {
