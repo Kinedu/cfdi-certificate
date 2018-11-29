@@ -11,8 +11,8 @@
 
 namespace Kinedu\CfdiCertificate\Test;
 
-use PHPUnit\Framework\TestCase;
 use Kinedu\CfdiCertificate\IO;
+use PHPUnit\Framework\TestCase;
 
 class IOTest extends TestCase
 {

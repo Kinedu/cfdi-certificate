@@ -11,8 +11,8 @@
 
 namespace Kinedu\CfdiCertificate\Test;
 
-use Kinedu\CfdiCertificate\Certificate;
 use PHPUnit\Framework\TestCase;
+use Kinedu\CfdiCertificate\Certificate;
 
 class CertificateTest extends TestCase
 {
