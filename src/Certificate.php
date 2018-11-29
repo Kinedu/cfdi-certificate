@@ -32,9 +32,7 @@ class Certificate
      */
     protected $password;
 
-    /**
-     * @var string
-     */
+    /** @var string */
     protected $strategy;
 
     /**
@@ -74,9 +72,6 @@ class Certificate
         return $strategy;
     }
 
-    /**
-     * @return string
-     */
     public function decode(): string
     {
         $strategy = $this->getStrategy();
@@ -117,9 +112,6 @@ class Certificate
         }
     }
 
-    /**
-     * @return string
-     */
     protected function getFileExstensionName()
     {
         return $this->strategy ?? $this->file->getFileExstensionName();

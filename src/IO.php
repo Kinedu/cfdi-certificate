@@ -13,9 +13,7 @@ namespace Kinedu\CfdiCertificate;
 
 class IO
 {
-    /**
-     * @var string
-     */
+    /** @var string */
     protected $file;
 
     /**
@@ -28,9 +26,6 @@ class IO
         $this->file = $file;
     }
 
-    /**
-     * @return string
-     */
     public function getFileName(): string
     {
         $name = pathinfo($this->file);
@@ -39,9 +34,6 @@ class IO
         return $name;
     }
 
-    /**
-     * @return string
-     */
     public function getFileExstensionName(): string
     {
         $ext = strrchr($this->file, '.');
@@ -50,9 +42,6 @@ class IO
         return $ext;
     }
 
-    /**
-     * @return string
-     */
     public function getOrginalRoute(): string
     {
         return $this->file;

@@ -54,10 +54,7 @@ class CerStrategy
         return $pem;
     }
 
-    /**
-     * @return string
-     */
-    public function getNoCertificado()
+    public function getNoCertificado(): string
     {
         $data = $this->parseCertificate();
         $data = str_split($data['serialNumberHex'], 2);
@@ -71,38 +68,26 @@ class CerStrategy
         return $serialNumber;
     }
 
-    /**
-     * @return string
-     */
-    public function getExpirationDate()
+    public function getExpirationDate(): string
     {
         $data = $this->parseCertificate();
 
         return $this->dateFormat($data['validTo_time_t']);
     }
 
-    /**
-     * @return string
-     */
-    public function getInitialDate()
+    public function getInitialDate(): string
     {
         $data = $this->parseCertificate();
 
         return $this->dateFormat($data['validFrom_time_t']);
     }
 
-    /**
-     * @return array
-     */
-    protected function parseCertificate()
+    protected function parseCertificate(): array
     {
         return openssl_x509_parse($this->convertToPem());
     }
 
-    /**
-     * @param string $date
-     */
-    protected function dateFormat(string $date)
+    protected function dateFormat(string $date): string
     {
         return date('Y-m-d H:i:s', $date);
     }
