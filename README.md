@@ -48,7 +48,7 @@ use Kinedu\CfdiCertificate\Certificate;
 $cerFile = 'CSD01_AAA010101AAA.cer';
 
 $cer = new Certificate($cerFile);
-$cer->getNoCertificado();
+$cer->getCertificateNumber();
 ```
 
 ### Fecha Inicio de Vigencia
