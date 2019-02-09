@@ -14,7 +14,7 @@ namespace Kinedu\CfdiCertificate\Test\Strategies;
 use PHPUnit\Framework\TestCase;
 use Kinedu\CfdiCertificate\Strategies\CerStrategy;
 
-class CerStrategyTest extends TestCase
+class CerStartegyTest extends TestCase
 {
     protected $cerFileName = './tests/files/CSD01_AAA010101AAA.cer';
 
