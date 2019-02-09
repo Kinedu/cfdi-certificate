@@ -54,16 +54,16 @@ class Certificate
      */
     protected function getStrategy()
     {
-        switch ($this->getFileExstensionName()) {
+        switch ($this->getFileExtensionName()) {
             case 'cer':
                 $strategy = new CerStrategy(
-                    $this->file->getOrginalRoute()
+                    $this->file->getOriginalRoute()
                 );
             break;
 
             case 'key':
                 $strategy = new KeyStrategy(
-                    $this->file->getOrginalRoute(),
+                    $this->file->getOriginalRoute(),
                     $this->password
                 );
             break;
@@ -89,7 +89,7 @@ class Certificate
     public function save(string $directory, string $filename = null)
     {
         $filename  = $filename ?? $this->file->getFileName();
-        $extension = $this->getFileExstensionName();
+        $extension = $this->getFileExtensionName();
 
         $directory = rtrim($directory, '/').'/';
         $directory = "{$directory}{$filename}.{$extension}.pem";
@@ -112,8 +112,8 @@ class Certificate
         }
     }
 
-    protected function getFileExstensionName()
+    protected function getFileExtensionName()
     {
-        return $this->strategy ?? $this->file->getFileExstensionName();
+        return $this->strategy ?? $this->file->getFileExtensionName();
     }
 }

@@ -28,7 +28,7 @@ class IOTest extends TestCase
     public function testExtensionFileName()
     {
         $this->assertEquals(
-            $this->io->getFileExstensionName(),
+            $this->io->getFileExtensionName(),
             'key'
         );
     }
@@ -41,10 +41,10 @@ class IOTest extends TestCase
         );
     }
 
-    public function testGetOrginalRoute()
+    public function testGetOriginalRoute()
     {
         $this->assertEquals(
-            $this->io->getOrginalRoute(),
+            $this->io->getOriginalRoute(),
             $this->file
         );
     }
