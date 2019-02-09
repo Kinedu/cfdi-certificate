@@ -25,7 +25,7 @@ class CerStrategy
      *
      * @var integer
      */
-    protected $chunklen = 64;
+    protected $chunkLength = 64;
 
     /**
      * Create a new cer strategy instance.
@@ -48,13 +48,13 @@ class CerStrategy
         $suffix = "-----END CERTIFICATE-----\n";
 
         $pem = base64_encode($this->file);
-        $pem = chunk_split($pem, $this->chunklen, "\n") ;
+        $pem = chunk_split($pem, $this->chunkLength, "\n") ;
         $pem = $prefix.$pem.$suffix;
 
         return $pem;
     }
 
-    public function getNoCertificado(): string
+    public function getCertificateNumber(): string
     {
         $data = $this->parseCertificate();
         $data = str_split($data['serialNumberHex'], 2);

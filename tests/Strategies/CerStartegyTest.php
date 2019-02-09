@@ -28,12 +28,12 @@ class CerStrategyTest extends TestCase
         );
     }
 
-    public function testGetNoCertificado()
+    public function testGetCertificateNumber()
     {
         $strategy = new CerStrategy($this->cerFileName);
 
         $this->assertEquals(
-            $strategy->getNoCertificado(),
+            $strategy->getCertificateNumber(),
             '30001000000300023708'
         );
     }
