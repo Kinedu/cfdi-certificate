@@ -24,7 +24,7 @@ class KeyStrategyTest extends TestCase
         $strategy = new KeyStrategy($keyFileName, $password);
 
         $this->assertEquals(
-            $strategy->convertToPem(),
+            $strategy->decode(),
             file_get_contents("{$keyFileName}.pem")
         );
     }

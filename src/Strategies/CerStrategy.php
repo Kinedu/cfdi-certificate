@@ -42,7 +42,7 @@ class CerStrategy
      *
      * @return string
      */
-    public function convertToPem(): string
+    public function decode(): string
     {
         $prefix = "-----BEGIN CERTIFICATE-----\n";
         $suffix = "-----END CERTIFICATE-----\n";
@@ -84,7 +84,7 @@ class CerStrategy
 
     protected function parseCertificate(): array
     {
-        return openssl_x509_parse($this->convertToPem());
+        return openssl_x509_parse($this->decode());
     }
 
     protected function dateFormat(string $date): string

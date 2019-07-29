@@ -36,12 +36,17 @@ class KeyStrategy
     public function __construct(string $file, string $password)
     {
         $this->file = $file;
+
         $this->password = $password;
     }
 
-    public function convertToPem(): string
+    public function decode(): string
     {
-        $pem = shell_exec("openssl pkcs8 -inform DER -in {$this->file} -passin pass:{$this->password}");
+        return shell_exec(sprintf(
+            "openssl pkcs8 -inform DER -in %s -passin pass:%s",
+            $this->file,
+            $this->password
+        ));
 
         return $pem;
     }

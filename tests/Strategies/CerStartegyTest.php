@@ -23,7 +23,7 @@ class CerStrategyTest extends TestCase
         $strategy = new CerStrategy($this->cerFileName);
 
         $this->assertEquals(
-            $strategy->convertToPem(),
+            $strategy->decode(),
             file_get_contents("{$this->cerFileName}.pem")
         );
     }

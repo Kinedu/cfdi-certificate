@@ -74,10 +74,7 @@ class Certificate
 
     public function decode(): string
     {
-        $strategy = $this->getStrategy();
-        $pem = $strategy->convertToPem();
-
-        return $pem;
+        return $this->getStrategy()->decode();
     }
 
     /**
