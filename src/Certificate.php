@@ -45,7 +45,9 @@ class Certificate
     public function __construct(string $file, string $password = null, string $strategy = null)
     {
         $this->file = new IO($file);
+
         $this->password = $password;
+
         $this->strategy = $strategy;
     }
 
@@ -56,20 +58,18 @@ class Certificate
     {
         switch ($this->getFileExtensionName()) {
             case 'cer':
-                $strategy = new CerStrategy(
+                return new CerStrategy(
                     $this->file->getOriginalRoute()
                 );
             break;
 
             case 'key':
-                $strategy = new KeyStrategy(
+                return new KeyStrategy(
                     $this->file->getOriginalRoute(),
                     $this->password
                 );
             break;
         }
-
-        return $strategy;
     }
 
     public function decode(): string
