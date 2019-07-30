@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace Kinedu\CFDI\Certificate\Test\Strategies;
+namespace Kinedu\CFDI\Certificate\Test;
 
 use PHPUnit\Framework\TestCase;
-use Kinedu\CFDI\Certificate\Strategies\CerStrategy;
+use Kinedu\CFDI\Certificate\CER;
 
-class CerStartegyTest extends TestCase
+class CERTest extends TestCase
 {
     protected $cerFileName = './tests/files/CSD01_AAA010101AAA.cer';
 
     public function testConvertCerToPem()
     {
-        $strategy = new CerStrategy($this->cerFileName);
+        $strategy = new CER($this->cerFileName);
 
         $this->assertEquals(
             $strategy->decode(),
@@ -30,7 +30,7 @@ class CerStartegyTest extends TestCase
 
     public function testGetCertificateNumber()
     {
-        $strategy = new CerStrategy($this->cerFileName);
+        $strategy = new CER($this->cerFileName);
 
         $this->assertEquals(
             $strategy->getCertificateNumber(),
@@ -40,7 +40,7 @@ class CerStartegyTest extends TestCase
 
     public function testGetExpirationDate()
     {
-        $strategy = new CerStrategy($this->cerFileName);
+        $strategy = new CER($this->cerFileName);
 
         $this->assertEquals(
             $strategy->getExpirationDate(),
@@ -50,7 +50,7 @@ class CerStartegyTest extends TestCase
 
     public function testGetInitialDate()
     {
-        $strategy = new CerStrategy($this->cerFileName);
+        $strategy = new CER($this->cerFileName);
 
         $this->assertEquals(
             $strategy->getInitialDate(),

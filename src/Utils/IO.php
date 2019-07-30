@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Kinedu\CFDI\Certificate;
+namespace Kinedu\CFDI\Certificate\Utils;
 
 class IO
 {

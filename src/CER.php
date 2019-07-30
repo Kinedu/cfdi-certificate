@@ -9,45 +9,32 @@
  * file that was distributed with this source code.
  */
 
-namespace Kinedu\CFDI\Certificate\Strategies;
+namespace Kinedu\CFDI\Certificate;
 
-class CerStrategy
+class CER extends Certificate
 {
-    /**
-     * File to decode.
-     *
-     * @var string
-     */
-    protected $file;
+    /** @var string */
+    protected $cerFile;
 
-    /**
-     * Chunk length.
-     *
-     * @var integer
-     */
+    /** @var integer */
     protected $chunkLength = 64;
 
-    /**
-     * Create a new cer strategy instance.
-     *
-     * @param string $file
-     */
-    public function __construct(string $file)
+    /** @var string */
+    public $decodeExtension = 'cer.pem';
+
+    public function __construct(string $cerFile)
     {
-        $this->file = file_get_contents($file);
+        $this->cerFile = file_get_contents(
+            $this->getOriginalRouteFile($cerFile)
+        );
     }
 
-    /**
-     * Convert .cer to .pem
-     *
-     * @return string
-     */
     public function decode(): string
     {
         $prefix = "-----BEGIN CERTIFICATE-----\n";
         $suffix = "-----END CERTIFICATE-----\n";
 
-        $pem = base64_encode($this->file);
+        $pem = base64_encode($this->cerFile);
         $pem = chunk_split($pem, $this->chunkLength, "\n") ;
         $pem = $prefix.$pem.$suffix;
 
