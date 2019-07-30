@@ -14,7 +14,7 @@ namespace Kinedu\CFDI\Certificate\Test\Strategies;
 use PHPUnit\Framework\TestCase;
 use Kinedu\CFDI\Certificate\Strategies\KeyStrategy;
 
-class KeyStrategyTest extends TestCase
+class KeyStartegyTest extends TestCase
 {
     public function testConvertKeyToPem()
     {
