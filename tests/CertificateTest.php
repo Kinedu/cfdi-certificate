@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Kinedu\CfdiCertificate\Test;
+namespace Kinedu\CFDI\Certificate\Test;
 
 use PHPUnit\Framework\TestCase;
-use Kinedu\CfdiCertificate\Certificate;
+use Kinedu\CFDI\Certificate\Certificate;
 
 class CertificateTest extends TestCase
 {

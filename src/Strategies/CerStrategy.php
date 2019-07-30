@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Kinedu\CfdiCertificate\Strategies;
+namespace Kinedu\CFDI\Certificate\Strategies;
 
 class CerStrategy
 {

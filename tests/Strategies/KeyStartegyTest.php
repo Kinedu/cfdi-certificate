@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Kinedu\CfdiCertificate\Test\Strategies;
+namespace Kinedu\CFDI\Certificate\Test\Strategies;
 
 use PHPUnit\Framework\TestCase;
-use Kinedu\CfdiCertificate\Strategies\KeyStrategy;
+use Kinedu\CFDI\Certificate\Strategies\KeyStrategy;
 
 class KeyStrategyTest extends TestCase
 {

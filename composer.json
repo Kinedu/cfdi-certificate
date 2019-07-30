@@ -25,12 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Kinedu\\CfdiCertificate\\": "src"
+            "Kinedu\\CFDI\\Certificate\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Kinedu\\CfdiCertificate\\Tests\\": "tests"
+            "Kinedu\\CFDI\\Certificate\\Tests\\": "tests"
         }
     },
     "prefer-stable": true

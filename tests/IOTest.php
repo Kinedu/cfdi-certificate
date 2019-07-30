@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Kinedu\CfdiCertificate\Test;
+namespace Kinedu\CFDI\Certificate\Test;
 
-use Kinedu\CfdiCertificate\IO;
+use Kinedu\CFDI\Certificate\IO;
 use PHPUnit\Framework\TestCase;
 
 class IOTest extends TestCase

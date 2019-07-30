@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Kinedu\CfdiCertificate;
+namespace Kinedu\CFDI\Certificate;
 
 use Exception;
-use Kinedu\CfdiCertificate\IO;
-use Kinedu\CfdiCertificate\Strategies\CerStrategy;
-use Kinedu\CfdiCertificate\Strategies\KeyStrategy;
+use Kinedu\CFDI\Certificate\IO;
+use Kinedu\CFDI\Certificate\Strategies\CerStrategy;
+use Kinedu\CFDI\Certificate\Strategies\KeyStrategy;
 
 class Certificate
 {
