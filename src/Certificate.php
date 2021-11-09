@@ -17,7 +17,7 @@ abstract class Certificate
 {
     use HasFiles;
 
-    abstract public function decode(): string;
+    abstract public function decode(): ?string;
 
     public function save(string $directory, string $filename)
     {
