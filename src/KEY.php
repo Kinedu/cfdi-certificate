@@ -29,7 +29,7 @@ class KEY extends Certificate
         $this->password = $password;
     }
 
-    public function decode(): string
+    public function decode(): ?string
     {
         return shell_exec(sprintf(
             "openssl pkcs8 -inform DER -in %s -passin pass:%s",

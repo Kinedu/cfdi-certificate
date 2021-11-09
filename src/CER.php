@@ -29,7 +29,7 @@ class CER extends Certificate
         );
     }
 
-    public function decode(): string
+    public function decode(): ?string
     {
         $prefix = "-----BEGIN CERTIFICATE-----\n";
         $suffix = "-----END CERTIFICATE-----\n";
