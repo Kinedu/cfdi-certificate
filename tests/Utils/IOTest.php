@@ -20,7 +20,7 @@ class IOTest extends TestCase
 
     protected $file = './tests/files/CSD01_AAA010101AAA.key';
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->io = new IO($this->file);
     }
